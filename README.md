@@ -1,69 +1,73 @@
-# Hướng dẫn chạy Nexus.sh trên Ubuntu
+# How to run `Nexus.sh` on Ubuntu
 
-## 1. Cài Git, screen và curl
+## 1. Install Git, screen, and curl
 ```bash
 sudo apt update
 sudo apt install -y git screen curl
 ```
 
-## 2. Clone repo
+## 2. Clone the repo
 ```bash
 git clone https://github.com/nongdancryptos/Nexus.git
 cd Nexus
 ```
 
-## 3. Cấp quyền thực thi cho script
+## 3. Make the script executable
 ```bash
 chmod +x nexus.sh
 ```
 
-## 4. Chuẩn bị file id.txt (mỗi dòng 1 NODE-ID)
-Tạo file `id.txt` trong thư mục `Nexus`:
+## 4. Prepare the `id.txt` file (one NODE-ID per line)
+Create the `id.txt` file in the `Nexus` directory:
 ```bash
 nano id.txt
 ```
 
-Ví dụ nội dung `id.txt`:
+Example contents of `id.txt`:
 ```
 36063968
 36063969
 36063970
 ```
 
-## 5. Cài nexus-network CLI
+## 5. Install the `nexus-network` CLI
 ```bash
 curl https://cli.nexus.xyz/ | sh
 source ~/.bashrc
 ```
 
-Kiểm tra:
+Verify:
 ```bash
 nexus-network --help
 ```
 
-## 6. Chạy script
-- Start toàn bộ node trong `id.txt`:
+## 6. Run the script
+- Start all nodes listed in `id.txt`:
 ```bash
 ./nexus.sh start
 ```
-- Xem trạng thái screen session:
+- Check screen session status:
 ```bash
 ./nexus.sh status
 ```
-- Stop toàn bộ node:
+- Stop all nodes:
 ```bash
 ./nexus.sh stop
 ```
-- Start một node:
+- Start a single node:
 ```bash
 ./nexus.sh start-one <node-id>
 ```
-- Stop một node:
+- Stop a single node:
 ```bash
 ./nexus.sh stop-one <node-id>
 ```
 
-## 7. Xem log
+## 7. View logs
 ```bash
 tail -f ~/nexus_nodes/<node-id>/nexus.log
 ```
+<!-- Code display (SVG) -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nongdancryptos/nongdancryptos/refs/heads/main/QR-Code/readme.svg" alt="Donation Wallets (SVG code card)" />
+</p>
