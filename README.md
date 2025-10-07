@@ -31,15 +31,30 @@ Example contents of `id.txt`:
 ```
 
 ## 5. Install the `nexus-network` CLI
+
+### Option 1 — Auto install (recommended)
 ```bash
 curl https://cli.nexus.xyz/ | sh
 source ~/.bashrc
 ```
 
-Verify:
+### Option 2 — Manual install (for v0.10.15)
 ```bash
-nexus-network --help
+wget https://github.com/nexus-xyz/nexus-cli/releases/download/v0.10.15/nexus-cli-0.10.15-linux-amd64.tar.gz
+tar -xzf nexus-cli-0.10.15-linux-amd64.tar.gz
+sudo install -m 755 nexus-cli-0.10.15/nexus-network /usr/local/bin/nexus-network
 ```
+
+Verify installation:
+```bash
+nexus-network --version
+```
+Expected output:
+```
+nexus-network 0.10.15 (build 1758914182067)
+```
+
+---
 
 ## 6. Run the script
 - Start all nodes listed in `id.txt`:
@@ -63,11 +78,15 @@ nexus-network --help
 ./nexus.sh stop-one <node-id>
 ```
 
+---
+
 ## 7. View logs
 ```bash
 tail -f ~/nexus_nodes/<node-id>/nexus.log
 ```
-<!-- Code display (SVG) -->
+
+---
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/nongdancryptos/nongdancryptos/refs/heads/main/QR-Code/readme.svg" alt="Donation Wallets (SVG code card)" />
 </p>
